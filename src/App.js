@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Input from "./Components/Input";
+import Display from "./Components/Display";
 
 function App() {
+  const [user,setUser] = useState(null)
+
+  const userDisplay =user && <Display user={user} />
+   
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div> 
+        <Input setUser={setUser} />
+        {userDisplay}
+            </div>
   );
 }
 
 export default App;
+  // condition rendering
+
+// takes in input (username)
+// when submitted fetch that user's data from github 
+// display that data
+
+// how many components and what are they?
+// application -> form with inpu and display
+
+// what are our stateful variables?
+//   userName and userData 
+
+// where do those variable get defined?
+
+// input state
+// start in input 
